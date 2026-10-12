@@ -1,74 +1,1227 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071429"><title>Ruang Siar — Latihan News Anchor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teleprompter - Lomba Baca Berita | Bulan Bahasa 2026</title>
 <style>
-:root{--navy:#071429;--blue:#0d2a50;--cyan:#53d8f3;--red:#e52d48;--white:#f5f8ff;--muted:#9fb2cc;--gold:#f4c86a}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#030914;color:var(--white);font-family:Inter,Segoe UI,Arial,sans-serif}body{background:radial-gradient(ellipse at 19% 40%,#133b69 0,transparent 38%),radial-gradient(ellipse at 77% 15%,#10294b 0,transparent 40%),linear-gradient(135deg,#08182d,#050b17 72%)}button,select,input{font:inherit}button{cursor:pointer}.app{height:100dvh;min-height:540px;display:grid;grid-template-rows:78px minmax(0,1fr) 62px;gap:12px;padding:16px 20px 10px}.topbar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18;padding:0 4px 12px}.brand{display:flex;align-items:center;gap:13px}.brandmark{width:44px;height:44px;border-radius:13px;background:linear-gradient(145deg,#e52d48,#af1028);display:grid;place-items:center;font-weight:900;font-size:15px;box-shadow:0 8px 30px #e52d4844}.eyebrow{font-size:10px;letter-spacing:.25em;color:var(--cyan);font-weight:800}.brand h1{font-size:20px;letter-spacing:.04em;margin:3px 0 0}.topright{display:flex;align-items:center;gap:12px}.live{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.16em;font-weight:800;color:#ffdfe4;background:#b81731aa;border:1px solid #fa6373;border-radius:30px;padding:9px 13px}.dot{width:8px;height:8px;background:#ff334f;border-radius:50%;box-shadow:0 0 12px #ff334f;animation:pulse 1.4s infinite}@keyframes pulse{50%{opacity:.35}}.clock{color:#b9c8da;font:600 13px ui-monospace,monospace}.main{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{position:relative;min-width:0;overflow:hidden;border:1px solid #8eaec52b;border-radius:18px;background:#09172bde;box-shadow:0 18px 48px #0005}.camera-panel{display:flex;flex-direction:column;background:linear-gradient(155deg,#10294b,#071426 70%)}.panel-head{height:55px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 17px;border-bottom:1px solid #ffffff14}.panel-title{display:flex;align-items:center;gap:10px;font-weight:800;font-size:12px;letter-spacing:.12em}.camera-icon{color:var(--cyan);font-size:18px}.subtle{font-size:10px;color:var(--muted);letter-spacing:.04em}.stage{position:relative;flex:1;min-height:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#21518a 0,#10294b 35%,#071326 72%)}.stage:before,.stage:after{content:"";position:absolute;inset:-15%;pointer-events:none}.stage:before{background:repeating-linear-gradient(112deg,transparent 0 11%,#3cbce60a 11.1% 11.4%,transparent 11.5% 21%);transform:perspective(500px) rotateY(-13deg)}.stage:after{background:linear-gradient(90deg,#040b17b8,transparent 17% 82%,#040b17b8),linear-gradient(0deg,#071326 0,transparent 30% 80%,#09182e)}.orb{position:absolute;width:44vw;height:44vw;max-height:78%;max-width:78%;border:1px solid #50b5ef36;border-radius:50%;box-shadow:0 0 0 22px #50b5ef09,0 0 0 60px #50b5ef07;z-index:0}.studio-label{position:absolute;top:7%;left:5%;z-index:2;color:#c9eaff88;letter-spacing:.25em;font-size:10px;font-weight:800}.studio-label span{color:#fff;margin-left:8px}.camera-frame{position:absolute;inset:8% 8% 9%;z-index:1;border:1px solid #90ceee38;border-radius:13px;overflow:hidden;background:#040a14;box-shadow:0 12px 40px #0007}.camera-frame video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1);display:block;background:radial-gradient(ellipse at 50% 30%,#1b3c60,#060d19 75%)}.cam-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(155deg,#10294b55,#030a15a8);padding:20px}.cam-placeholder.hidden{display:none}.cam-symbol{font-size:44px;color:#73d8fa;margin-bottom:11px}.cam-placeholder strong{font-size:17px}.cam-placeholder span{font-size:12px;color:#acc1d9;margin-top:8px;max-width:320px;line-height:1.5}.frame-corner{position:absolute;width:22px;height:22px;border-color:#6dd7f5;z-index:2}.tl{top:0;left:0;border-top:2px solid;border-left:2px solid}.tr{top:0;right:0;border-top:2px solid;border-right:2px solid}.bl{bottom:0;left:0;border-bottom:2px solid;border-left:2px solid}.br{bottom:0;right:0;border-bottom:2px solid;border-right:2px solid}.camera-hud{position:absolute;bottom:10px;left:12px;right:12px;z-index:3;display:flex;justify-content:space-between;align-items:end;text-shadow:0 2px 8px #000}.camstatus{font-size:10px;letter-spacing:.12em;color:#dbf4ff}.record{display:flex;align-items:center;gap:6px;color:#ffdae0;font-size:10px;font-weight:800;letter-spacing:.14em}.mic{background:#061327c9;border:1px solid #d7eaff32;border-radius:10px;padding:9px 12px;color:#d7eaff;font-size:11px}.camera-tools{flex:none;display:flex;align-items:center;justify-content:space-between;padding:11px 14px;background:#061122;border-top:1px solid #ffffff13;gap:8px}.camera-tools small{font-size:10px;color:var(--muted);line-height:1.35}.btn{border:1px solid #ffffff26;background:#14263e;color:#eaf5ff;border-radius:9px;padding:10px 13px;font-weight:750;font-size:11px;transition:.15s}.btn:hover{filter:brightness(1.18);transform:translateY(-1px)}.btn.primary{background:linear-gradient(135deg,#d82443,#a80f2b);border-color:#ff6173;color:#fff}.btn.blue{background:#123d66;border-color:#2d87ba}.btn:disabled{opacity:.42;cursor:not-allowed;transform:none}.tele-panel{display:flex;flex-direction:column;background:#09172a}.tele-head{height:55px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #ffffff14}.select-wrap{display:flex;align-items:center;gap:9px;min-width:0}.select-wrap label{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.1em}.select-wrap select{max-width:230px;min-width:150px;border:1px solid #2b4666;background:#10223b;color:white;border-radius:8px;padding:9px 26px 9px 10px;font-weight:700;font-size:11px}.sim-tag{font-size:9px;color:#ffe0a2;border:1px solid #dba94e69;background:#9b6b171c;padding:6px 8px;border-radius:20px;white-space:nowrap}.read-area{position:relative;flex:1;min-height:0;overflow:hidden;background:linear-gradient(180deg,#0c1d34,#091426)}.read-area:before,.read-area:after{content:"";position:absolute;left:0;right:0;height:42px;z-index:2;pointer-events:none}.read-area:before{top:0;background:linear-gradient(#0b1a2dcc,transparent)}.read-area:after{bottom:0;background:linear-gradient(transparent,#091426)}.reading-line{position:absolute;top:31%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#e63a54 20%,#f26b6e 80%,transparent);opacity:.65;z-index:2}.tele-scroll{height:100%;overflow:auto;scrollbar-width:thin;scrollbar-color:#385675 transparent;padding:22px 8% 45px;scroll-behavior:auto}.story-kicker{color:var(--cyan);font-size:11px;letter-spacing:.18em;font-weight:900;margin:8px 0 12px}.tele-scroll h2{font-family:Georgia,serif;font-size:clamp(23px,2.1vw,35px);line-height:1.16;margin:0 0 18px;max-width:700px}.story-meta{display:flex;gap:8px;align-items:center;color:#94a9c4;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 21px}.story-meta i{height:3px;width:3px;border-radius:50%;background:var(--red)}.script{font-family:Georgia,'Times New Roman',serif;font-size:clamp(17px,1.55vw,25px);line-height:1.68;color:#e4ebf5;max-width:720px;white-space:pre-line;letter-spacing:.005em}.script p{margin:0 0 1.15em}.script strong{color:#fff}.read-hint{display:block;margin-top:30px;padding-top:15px;border-top:1px solid #ffffff18;color:#7f97b4;font:11px/1.5 Inter,Arial,sans-serif}.controlbar{flex:none;background:#071223;border-top:1px solid #ffffff14;padding:11px 13px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.controls-left,.controls-right{display:flex;align-items:center;gap:8px}.control-group{display:flex;align-items:center;gap:7px;padding:0 10px;border-right:1px solid #ffffff19}.control-group:last-child{border:0}.control-group label{font-size:9px;color:#8fa4bd;font-weight:800;letter-spacing:.07em;white-space:nowrap}.range{width:88px;accent-color:#59cee9}.value{font:11px ui-monospace,monospace;color:#d9efff;min-width:32px}.timer{font:700 18px ui-monospace,monospace;color:#fff;min-width:57px;text-align:center}.timer.warning{color:#ff7585}.timer.done{color:var(--gold)}.status{font-size:10px;color:#8da4bf;white-space:nowrap}.footnote{text-align:right;color:#7187a1;font-size:9px;padding-right:3px}.toast{position:fixed;bottom:85px;left:50%;transform:translate(-50%,10px);opacity:0;pointer-events:none;transition:.2s;background:#102843;border:1px solid #50bde2;color:#e7faff;border-radius:10px;padding:11px 15px;font-size:12px;z-index:20;box-shadow:0 8px 30px #0008}.toast.show{opacity:1;transform:translate(-50%,0)}
-.scene-select{max-width:180px;background:#10223b;color:#eaf5ff;border:1px solid #315273;border-radius:8px;padding:8px;font-size:10px;font-weight:700}.stage{--scene-a:#21518a;--scene-b:#10294b;--scene-c:#071326;transition:background .35s ease;background:radial-gradient(ellipse at 50% 42%,var(--scene-a) 0,var(--scene-b) 35%,var(--scene-c) 72%)}.stage[data-scene="breaking"]{--scene-a:#a33148;--scene-b:#4c1731;--scene-c:#150f20}.stage[data-scene="world"]{--scene-a:#168799;--scene-b:#103e67;--scene-c:#07172b}.stage[data-scene="banyuwangi"]{--scene-a:#278d79;--scene-b:#18534d;--scene-c:#0b1d25}.stage.custom{background-size:cover;background-position:center}
-@media(max-width:900px){.app{padding:10px;gap:8px;grid-template-rows:60px minmax(0,1fr) 96px}.topbar{padding-bottom:8px}.main{gap:8px}.panel-head,.tele-head{height:46px}.camera-tools{padding:8px}.camera-tools small{display:none}.btn{padding:9px;font-size:10px}.controlbar{grid-template-columns:1fr;gap:6px;padding:7px}.controls-left,.controls-right{justify-content:center}.footnote{display:none}.control-group{padding:0 7px}.range{width:60px}.tele-scroll{padding-left:6%;padding-right:6%}.select-wrap select{min-width:120px}.brand h1{font-size:16px}}
-@media(max-width:620px){.app{min-height:600px;grid-template-rows:54px minmax(0,1fr) 110px;padding:8px}.main{grid-template-columns:1fr;grid-template-rows:38% 62%;gap:7px}.brandmark{width:35px;height:35px}.brand h1{font-size:13px}.eyebrow{font-size:8px}.clock{display:none}.live{padding:7px 9px;font-size:9px}.camera-panel .panel-head{height:36px}.camera-tools{padding:5px}.stage .camera-frame{inset:5% 12%}.studio-label{top:3%;font-size:8px}.tele-head{height:40px}.panel-title{font-size:10px}.tele-scroll{padding-top:12px;padding-bottom:25px}.tele-scroll h2{font-size:22px;margin-bottom:10px}.story-meta{margin-bottom:11px}.script{font-size:17px;line-height:1.5}.story-kicker{margin:0 0 6px}.controlbar{padding:5px;gap:2px}.controls-left,.controls-right{gap:4px}.control-group{gap:4px;padding:0 5px}.control-group label{font-size:8px}.range{width:48px}.btn{padding:8px 9px}.timer{font-size:15px}}
-/* Layar IFP: pas ke viewport browser, tanpa tinggi minimum yang menyebabkan overflow. */
-.app{height:100vh;height:100dvh;min-height:0;grid-template-rows:64px minmax(0,1fr) 18px;gap:7px;padding:8px 12px 3px}
-.topbar{padding-bottom:6px}.brandmark{width:38px;height:38px}.main{gap:9px}.panel{min-height:0}.panel-head,.tele-head{height:44px}.camera-tools{padding:7px 10px}.camera-tools small{font-size:9px}.controlbar{padding:8px 10px;gap:6px}
-@media(max-height:800px){.app{grid-template-rows:54px minmax(0,1fr) 14px;gap:5px;padding:6px 10px 2px}.topbar{padding-bottom:4px}.brandmark{width:34px;height:34px}.brand h1{font-size:16px}.panel-head,.tele-head{height:40px}.camera-tools{padding:5px 8px}.controlbar{padding:5px 8px}.tele-scroll{padding-top:14px;padding-bottom:26px}.tele-scroll h2{font-size:clamp(21px,1.8vw,30px);margin-bottom:12px}.story-meta{margin-bottom:14px}.script{font-size:clamp(16px,1.3vw,22px);line-height:1.48}.read-hint{margin-top:16px;padding-top:10px}}
-@media(max-height:620px){.app{grid-template-rows:44px minmax(0,1fr) 10px;gap:4px;padding:4px 8px 1px}.brandmark{width:30px;height:30px}.brand h1{font-size:14px}.eyebrow{font-size:8px}.panel-head,.tele-head{height:34px}.panel-title{font-size:10px}.camera-tools{padding:3px 6px}.camera-tools .btn{padding:6px 8px}.tele-scroll{padding-top:8px;padding-bottom:20px}.tele-scroll h2{font-size:20px;margin-bottom:7px}.story-meta{margin-bottom:8px}.script{font-size:16px;line-height:1.38}.read-hint{margin-top:10px;padding-top:7px}.controlbar{padding:3px 6px}.btn{padding:6px 8px}.control-group{gap:4px;padding:0 6px}.range{width:60px}}
-@media(max-width:620px){.app{min-height:0;grid-template-rows:44px minmax(0,1fr) 88px;padding:5px;gap:5px}.main{grid-template-columns:1fr;grid-template-rows:minmax(160px,.62fr) minmax(0,1fr);gap:5px}.camera-panel .panel-head{height:32px}.camera-tools{padding:3px}.camera-tools small{display:none}.stage .camera-frame{inset:4% 12%}.tele-head{height:34px}.fullscreen-btn{padding:6px 8px;font-size:14px}.fullscreen-btn span{display:none}.topright{gap:5px}.live{font-size:8px;padding:6px 7px}}
-/* Wrap control rows instead of letting touch buttons run off the IFP display. */
-@media(max-width:1100px){.controlbar{grid-template-columns:minmax(0,1fr);align-items:center}.controls-left,.controls-right{width:100%;min-width:0;flex-wrap:wrap;justify-content:center;row-gap:7px}.control-group{border-right:0;padding:3px 7px}.controls-right .btn{white-space:nowrap}}
-@media(max-width:760px){.app{padding-left:7px;padding-right:7px}.topbar{gap:5px}.brand{min-width:0;gap:7px}.brand h1{font-size:14px}.topright{min-width:0;gap:6px}.clock{display:none}.scene-select{max-width:46%;font-size:9px;padding:6px}.sim-tag{display:none}.select-wrap select{max-width:55%;min-width:0}.camera-tools{flex-wrap:wrap;justify-content:center}.camera-tools>div{max-width:100%;flex-wrap:wrap;justify-content:center}.camera-tools .btn{white-space:nowrap}.control-group{gap:5px;padding:2px 5px}.range{width:58px}.timer{font-size:16px;min-width:48px}.controls-right{column-gap:5px}}
-@media(max-width:620px){.app{grid-template-rows:42px minmax(0,1fr) 88px;gap:4px;padding:4px}.brandmark{width:29px;height:29px;font-size:12px}.brand h1{font-size:11px}.eyebrow{font-size:7px;letter-spacing:.16em}.topright{gap:4px}.live{font-size:0;padding:7px}.live .dot{margin:0}.scene-select{max-width:48%;min-width:0}.camera-panel .panel-head{padding:0 8px}.panel-title{font-size:9px;gap:5px}.camera-tools>div{gap:4px}.camera-tools .btn{font-size:9px;padding:6px}.tele-head{padding:0 8px}.sim-tag{display:none}.select-wrap{gap:5px;min-width:0}.select-wrap label{font-size:8px}.select-wrap select{max-width:65%;min-width:0;font-size:9px;padding:7px 18px 7px 6px}.controlbar{padding:4px}.controls-left,.controls-right{gap:3px;row-gap:4px}.control-group{padding:1px 3px}.control-group label{font-size:7px}.range{width:42px}.value{font-size:9px;min-width:25px}.control-group select{max-width:68px}.timer{font-size:14px;min-width:42px}.controls-right .btn{font-size:9px;padding:6px}.fullscreen-btn{font-size:14px!important;padding:5px 7px!important}}
-.read-area{background:#000}.read-area:before,.read-area:after{background:linear-gradient(#000,transparent)}.read-area:after{background:linear-gradient(transparent,#000)}.reading-line{top:31%;height:2px;background:#df2636;opacity:.95;box-shadow:0 0 10px #fa334d66}.tele-scroll{padding:7% 5% 42%;scroll-behavior:auto}.story-kicker,.tele-scroll h2,.story-meta{transition:opacity .2s}.script{max-width:none;text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:clamp(32px,3.1vw,62px);line-height:1.48;font-weight:750;color:#fff;letter-spacing:0}.script p{margin:0 0 1.1em}.script p:nth-child(-n+2){color:#ffc629}.script strong{color:inherit}.tele-panel.reading .story-kicker,.tele-panel.reading .tele-scroll h2,.tele-panel.reading .story-meta,.tele-panel.reading .read-hint{display:none}.tele-panel.reading .tele-scroll{padding-top:32%;overflow:hidden}.script{will-change:transform;transform:translate3d(0,0,0)}.tele-panel.reading .script p:nth-child(-n+2){color:#ffc629}
-@media(max-width:900px){.script{font-size:clamp(27px,3.3vw,46px);line-height:1.42}.tele-panel.reading .tele-scroll{padding-top:35%}.tele-scroll{padding-left:4%;padding-right:4%}}
-@media(max-height:700px){.script{font-size:clamp(25px,2.7vw,42px);line-height:1.38}.tele-panel.reading .tele-scroll{padding-top:30%}.read-hint{display:none}}
-/* Keep the timer and transport buttons inside the teleprompter on narrower IFP viewports. */
-@media(max-width:1400px){
-  .controlbar{grid-template-columns:minmax(0,1fr);min-width:0}
-  .controls-left{width:100%;min-width:0;flex-wrap:wrap;justify-content:center;row-gap:4px}
-  .controls-right{display:grid;width:100%;min-width:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
-  .controls-right .timer,.controls-right .btn{min-width:0;width:100%;text-align:center}
-  .controls-right .btn{padding:8px 4px;white-space:normal;line-height:1.15}
-}
-@media(max-width:620px){
-  .controlbar{grid-template-columns:minmax(0,1fr);gap:3px}
-  .controls-left{column-gap:2px;row-gap:2px}
-  .controls-right{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
-  .controls-right .timer{font-size:13px}
-  .controls-right .btn{font-size:clamp(8px,2.4vw,10px);padding:6px 2px}
-}</style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Arial,sans-serif; background:#000; color:#fff; overflow:hidden; height:100vh; }
+
+  /* ===== TOP BAR ===== */
+  #topbar {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:linear-gradient(180deg,#0f172a 0%,#1e293b 100%);
+    padding:10px 18px; display:flex; align-items:center; gap:12px;
+    border-bottom:2px solid #e63946; flex-wrap:wrap;
+    box-shadow:0 4px 20px rgba(230,57,70,.35);
+  }
+  .brand { font-size:14px; font-weight:800; color:#e63946; letter-spacing:1px; }
+  .brand small { display:block; font-size:10px; color:#94a3b8; font-weight:400; letter-spacing:0; }
+  select {
+    background:#1e293b; color:#fff; border:1px solid #334155;
+    padding:7px 12px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer;
+  }
+  select:focus { outline:2px solid #e63946; }
+
+  /* ===== CONTROLS ===== */
+  #controls {
+    position:fixed; top:64px; left:0; right:0; z-index:99;
+    background:rgba(15,23,42,.85); backdrop-filter:blur(8px);
+    padding:10px 18px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+    border-bottom:1px solid #334155;
+  }
+  button {
+    background:#e63946; color:#fff; border:none; padding:9px 16px;
+    border-radius:8px; cursor:pointer; font-size:13px; font-weight:700;
+    transition:all .2s; white-space:nowrap;
+  }
+  button:hover { background:#ff4d5e; transform:translateY(-1px); }
+  button.secondary { background:#334155; }
+  button.secondary:hover { background:#475569; }
+  button.active { background:#10b981; }
+  .slider-group {
+    display:flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,.05); padding:6px 12px; border-radius:8px;
+  }
+  .slider-group label { font-size:11px; color:#94a3b8; font-weight:600; }
+  input[type="range"] { width:100px; accent-color:#e63946; }
+  .val { font-size:12px; color:#e63946; font-weight:700; min-width:42px; display:inline-block; }
+
+  /* ===== ⚡ TOMBOL PRESET KECEPATAN ===== */
+  .speed-group {
+    display:flex; align-items:center; gap:6px;
+    background:rgba(255,255,255,.05); padding:6px 12px; border-radius:8px;
+  }
+  .speed-label { font-size:11px; color:#94a3b8; font-weight:600; margin-right:4px; }
+  .speed-btn {
+    background:#334155; color:#e2e8f0; border:none;
+    padding:6px 12px; border-radius:6px; cursor:pointer;
+    font-size:12px; font-weight:700; transition:all .2s;
+    white-space:nowrap;
+  }
+  .speed-btn:hover { background:#475569; transform:translateY(-1px); }
+  .speed-btn.active {
+    background:#e63946; color:#fff;
+    box-shadow:0 0 12px rgba(230,57,70,.6);
+  }
+
+  /* ===== 🎥 KAMERA NEWS ANCHOR (DRAGGABLE) ===== */
+  #cameraBox {
+    position:fixed;
+    bottom:60px; right:20px;
+    width:280px; height:auto; aspect-ratio: 4/3;
+    background:#000; border:3px solid #e63946; border-radius:12px;
+    box-shadow:0 8px 40px rgba(230,57,70,.6), 0 0 0 1px rgba(255,255,255,.1) inset;
+    overflow:hidden; display:none;
+    transition: width .2s ease, border-color .2s;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    z-index:95;
+  }
+  #cameraBox.on { display:block; }
+  #cameraBox.dragging {
+    cursor: grabbing;
+    transition: none;
+    box-shadow:0 12px 50px rgba(230,57,70,.9), 0 0 0 2px rgba(255,255,255,.2) inset;
+  }
+  #cameraBox.dragging::after {
+    border-color: rgba(255,255,255,.35);
+  }
+
+  /* Handle drag (header kecil di atas kamera) */
+  #cameraDragHandle {
+    position:absolute; top:0; left:0; right:0; height:26px;
+    z-index:5; cursor: grab;
+    background:linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,0));
+    display:flex; align-items:center; justify-content:center;
+    color:rgba(255,255,255,.55); font-size:11px; letter-spacing:3px;
+    pointer-events: auto;
+  }
+  #cameraBox.dragging #cameraDragHandle { cursor: grabbing; }
+  #cameraDragHandle::before {
+    content: '⋮⋮⋮';
+    font-weight:900;
+  }
+
+  #cameraVideo {
+    width:100%; height:100%; object-fit:cover;
+    transform: scaleX(-1);
+    background:#000;
+    pointer-events: none;
+  }
+
+  #cameraBox.no-mirror #cameraVideo { transform: scaleX(1); }
+
+  /* Label LIVE */
+  #cameraBox::before {
+    content:'● LIVE';
+    position:absolute; top:6px; left:8px; z-index:3;
+    font-size:10px; font-weight:900; letter-spacing:1px;
+    color:#fff; background:rgba(230,57,70,.9);
+    padding:3px 8px; border-radius:5px;
+    animation: liveBlink 1.2s infinite;
+    pointer-events: none;
+  }
+  @keyframes liveBlink { 0%,100%{opacity:1;} 50%{opacity:.5;} }
+
+  /* Corner tick */
+  #cameraBox::after {
+    content:'';
+    position:absolute; inset:6px; pointer-events:none;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:6px;
+    z-index:2;
+  }
+
+  /* Kontrol kecil di kamera */
+  .cam-ctrl {
+    position:absolute; bottom:8px; right:8px; z-index:6;
+    display:flex; gap:4px;
+  }
+  .cam-ctrl button {
+    width:26px; height:26px; padding:0;
+    font-size:12px; font-weight:900;
+    background:rgba(15,23,42,.85); border:1px solid rgba(255,255,255,.2);
+    border-radius:6px; color:#fff; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:all .15s;
+    transform: none;
+  }
+  .cam-ctrl button:hover { background:#e63946; transform:none; }
+
+  /* Ukuran kamera */
+  #cameraBox.size-s { width:180px; }
+  #cameraBox.size-m { width:280px; }
+  #cameraBox.size-l { width:420px; }
+
+  /* Error */
+  #cameraBox.error::before {
+    content:'⚠ KAMERA OFF';
+    background:rgba(120,53,15,.9);
+    animation:none;
+  }
+  #cameraBox.error { border-color:#78716c; }
+  #cameraBox.error #cameraVideo { display:none; }
+  #cameraBox.error #cameraDragHandle { display:none; }
+
+  #cameraError {
+    display:none; position:absolute; inset:0;
+    background:rgba(15,23,42,.95);
+    flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:20px; font-size:12px; color:#e2e8f0;
+    gap:8px;
+  }
+  #cameraBox.error #cameraError { display:flex; }
+  #cameraError .icon { font-size:32px; }
+
+  /* Mode background fullscreen (kamera jadi latar belakang) */
+  #cameraBox.fullscreen-bg {
+    width:auto !important; height:auto !important;
+    aspect-ratio: auto;
+    top:0 !important; left:0 !important; right:0 !important; bottom:0 !important;
+    border-radius:0 !important; border-width:0 !important;
+    opacity:.35;
+    cursor: default;
+    pointer-events: none;
+  }
+  #cameraBox.fullscreen-bg #cameraVideo { object-fit:cover; }
+  #cameraBox.fullscreen-bg #cameraDragHandle,
+  #cameraBox.fullscreen-bg::before,
+  #cameraBox.fullscreen-bg::after,
+  #cameraBox.fullscreen-bg .cam-ctrl { display:none; }
+
+  /* ===== PROMPTER AREA ===== */
+  #prompterWrap { position:absolute; inset:0; overflow:hidden; display:flex; justify-content:center; }
+  #prompter {
+    width:88%; max-width:1100px;
+    padding:42vh 0 60vh 0;
+    font-size:56px; line-height:1.55; font-weight:700;
+    text-align:center; color:#fff;
+    white-space:pre-wrap;
+    transition:transform .05s linear;
+  }
+  #prompter .pembuka { color:#fbbf24; }
+  #prompter .isi { color:#ffffff; }
+  #prompter .penutup { color:#60a5fa; }
+  #prompter .word.active {
+    background:rgba(230,57,70,.4);
+    border-radius:6px;
+    padding:0 4px;
+    box-shadow:0 0 12px rgba(230,57,70,.7);
+  }
+  #prompter .num { color:#f97316; font-weight:800; }
+
+  /* Garis baca */
+  #guide {
+    position:fixed; top:42vh; left:4%; right:4%; height:2px; z-index:50;
+    background:linear-gradient(90deg,transparent,#e63946 20%,#e63946 80%,transparent);
+    box-shadow:0 0 18px #e63946; pointer-events:none;
+  }
+  .arrow { position:fixed; top:calc(42vh - 14px); color:#e63946; font-size:26px; z-index:51; pointer-events:none; text-shadow:0 0 10px #e63946; }
+  #arrowL { left:1.5%; }
+  #arrowR { right:1.5%; }
+
+  /* ===== TIMER ===== */
+  #timerBox {
+    position:fixed; top:110px; right:20px; z-index:99;
+    background:rgba(15,23,42,.9); border:2px solid #e63946; border-radius:12px;
+    padding:12px 18px; text-align:center; min-width:130px;
+    box-shadow:0 4px 20px rgba(230,57,70,.4);
+  }
+  #timerBox .label { font-size:10px; color:#94a3b8; letter-spacing:1px; font-weight:700; }
+  #timer { font-size:36px; font-weight:900; color:#fff; font-variant-numeric:tabular-nums; line-height:1; margin-top:2px; }
+  #timer.warning { color:#f59e0b; }
+  #timer.danger { color:#ef4444; animation:pulse .8s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+  #wpm { font-size:11px; color:#94a3b8; margin-top:4px; }
+  #wpm span { color:#10b981; font-weight:800; }
+
+  /* ===== STATUS BAR ===== */
+  #statusbar {
+    position:fixed; bottom:0; left:0; right:0; z-index:100;
+    background:rgba(15,23,42,.92); backdrop-filter:blur(8px);
+    padding:8px 20px; display:flex; justify-content:space-between;
+    font-size:12px; color:#94a3b8; border-top:1px solid #334155;
+  }
+  #statusbar b { color:#e63946; }
+  #statusbar .struct { display:flex; gap:14px; }
+  #statusbar .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:4px; vertical-align:middle; }
+
+  /* ===== MODAL EDITOR ===== */
+  #editor {
+    position:fixed; inset:0; background:rgba(5,10,20,.98); z-index:200;
+    display:none; flex-direction:column; padding:80px 40px 40px;
+  }
+  #editor.show { display:flex; }
+  #editor h2 { color:#e63946; margin-bottom:12px; font-size:20px; }
+  #editor .hint { font-size:12px; color:#94a3b8; margin-bottom:10px; }
+  #editor textarea {
+    flex:1; background:#0f172a; color:#fff; border:2px solid #334155;
+    border-radius:10px; padding:18px; font-size:16px; line-height:1.8;
+    font-family:inherit; resize:none; outline:none;
+  }
+  #editor textarea:focus { border-color:#e63946; }
+  #editor .actions { display:flex; gap:10px; margin-top:12px; }
+
+  /* ===== COUNTDOWN ===== */
+  #countdown {
+    position:fixed; inset:0; background:rgba(0,0,0,.95); z-index:300;
+    display:none; justify-content:center; align-items:center;
+    font-size:220px; font-weight:900; color:#e63946;
+    text-shadow:0 0 60px #e63946;
+  }
+  #countdown.show { display:flex; animation:cdIn .3s ease-out; }
+  @keyframes cdIn { from { transform:scale(1.4); opacity:0; } to { transform:scale(1); opacity:1; } }
+  #countdown.tick { animation:cdTick .35s ease-out; }
+  @keyframes cdTick { from { transform:scale(1.3); } to { transform:scale(1); } }
+
+  /* ===== REC DOT ===== */
+  #recDot {
+    display:none; position:fixed; top:120px; left:20px; z-index:99;
+    font-size:14px; font-weight:800; color:#ef4444;
+    padding:6px 14px; border:2px solid #ef4444; border-radius:8px;
+    background:rgba(15,23,42,.9);
+  }
+  #recDot.on { display:flex; align-items:center; gap:8px; }
+  #recDot::before {
+    content:''; width:10px; height:10px; border-radius:50%; background:#ef4444;
+    animation:blink 1s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.2;} }
+
+  /* ===== AUDIO HINT ===== */
+  #audioHint {
+    position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+    background:rgba(15,23,42,.95); border:2px solid #e63946;
+    padding:20px 28px; border-radius:14px; z-index:400;
+    font-size:15px; text-align:center; display:none;
+    box-shadow:0 8px 40px rgba(230,57,70,.5);
+  }
+  #audioHint.show { display:block; animation:cdIn .3s ease-out; }
+  #audioHint b { color:#e63946; }
+
+  /* Sembunyikan panel saat running */
+  body.running #controls,
+  body.running #topbar { opacity:.25; transition:opacity .3s; }
+  body.running #controls:hover,
+  body.running #topbar:hover { opacity:1; }
+</style>
 </head>
 <body>
-<div class="app">
- <header class="topbar"><div class="brand"><div class="brandmark">RS</div><div><div class="eyebrow">STUDIO LATIHAN</div><h1>RUANG SIAR <span style="color:#8fa5be;font-weight:400">/ NEWS ANCHOR</span></h1></div></div><div class="topright"><div class="clock" id="clock">--:--:-- WIB</div><button class="btn blue fullscreen-btn" id="fullscreenBtn" type="button" aria-label="Masuk layar penuh">⛶ <span id="fullscreenLabel">Layar Penuh</span></button><div class="live"><span class="dot"></span> SIARAN LATIHAN</div></div></header>
- <main class="main">
-  <section class="panel camera-panel"><div class="panel-head"><div class="panel-title"><span class="camera-icon">◉</span> MONITOR KAMERA</div><select class="scene-select" id="sceneSelect" aria-label="Pilih suasana studio"><option value="main">Studio Utama</option><option value="breaking">Berita Utama</option><option value="world">Kabar Dunia</option><option value="banyuwangi">Kabar Banyuwangi</option></select></div><div class="stage" id="stage" data-scene="main"><div class="orb"></div><div class="studio-label">RUANG SIAR <span id="studioLabel">BERITA HARI INI</span></div><div class="camera-frame"><video id="video" autoplay muted playsinline></video><div class="cam-placeholder" id="placeholder"><div class="cam-symbol">◉</div><strong>Kamera siap digunakan</strong><span>Tekan “Aktifkan Kamera” untuk melihat pratinjau penampilan Anda.</span></div><i class="frame-corner tl"></i><i class="frame-corner tr"></i><i class="frame-corner bl"></i><i class="frame-corner br"></i><div class="camera-hud"><span class="camstatus" id="camStatus">KAMERA NONAKTIF</span><span class="record"><span class="dot"></span> PRAKIRAAN LIVE</span></div></div></div><div class="camera-tools"><small>BG studio mengubah suasana panggung. Untuk mengganti latar di dalam video perlu green screen.</small><div style="display:flex;gap:7px;flex:none"><input id="bgUpload" type="file" accept="image/*" hidden><button class="btn" id="uploadBgBtn">▧ &nbsp;Pilih BG</button><button class="btn blue" id="cameraBtn">◉ &nbsp;Aktifkan Kamera</button></div></div></section>
-  <section class="panel tele-panel" id="telePanel"><div class="tele-head"><div class="select-wrap"><label for="storySelect">PILIH BERITA</label><select id="storySelect" aria-label="Pilih naskah berita"></select></div><span class="sim-tag">NASKAH RESMI JUKNIS</span></div><div class="read-area" id="readArea"><div class="reading-line" id="readingLine"></div><article class="tele-scroll" id="teleScroll"><div class="story-kicker" id="kicker"></div><h2 id="headline"></h2><div class="story-meta"><span id="category"></span><i></i><span>SIMULASI SIARAN</span></div><div class="script" id="script"></div><div class="read-hint">Tetap tenang, artikulasikan kata dengan jelas, dan sesekali arahkan pandangan ke kamera.</div></article></div><div class="controlbar"><div class="controls-left"><div class="control-group"><label for="fontSize">UKURAN</label><input class="range" id="fontSize" type="range" min="32" max="64" value="48"><span class="value" id="fontValue">48 px</span></div><div class="control-group"><label for="speed">KECEPATAN</label><input class="range" id="speed" type="range" min="80" max="180" step="5" value="125"><span class="value" id="speedValue">125 kpm</span></div><div class="control-group"><label for="duration">DURASI</label><select id="duration" style="background:#10223b;color:white;border:1px solid #2b4666;border-radius:7px;padding:7px 6px;font-size:10px"><option value="60">1 menit</option><option value="120" selected>2 menit</option><option value="180">3 menit</option></select></div></div><div class="controls-right"><span class="timer" id="timer">02:00</span><button class="btn primary" id="startBtn">▶ Mulai</button><button class="btn" id="pauseBtn" disabled>Ⅱ Jeda</button><button class="btn" id="restartBtn">↺ Ulang</button></div></div></section>
- </main>
- <footer class="footnote">LATIHAN BACA BERITA · BULAN BAHASA 2026 &nbsp; / &nbsp; ARAHKAN PANDANGAN KE LENSA</footer>
-</div><div class="toast" id="toast" role="status"></div>
-<script>
-const stories=[
- {id:'daerah',label:'Berita Lokal · Banyuwangi',kicker:'BERITA LOKAL',category:'BANYUWANGI',recommended:120,title:'Ribuan Peserta Ramaikan Soekarno Run dan BIG Downhill 2026 Banyuwangi',body:`<p>Assalamu’alaikum warahmatullahi wabarakatuh.</p><p>Selamat pagi/siang, pemirsa. Anda kembali menyaksikan informasi terkini. Berikut berita selengkapnya.</p><p><strong>BANYUWANGI –</strong> Ribuan peserta dari berbagai daerah di Indonesia hingga atlet internasional meramaikan Soekarno Run dan Banyuwangi Ijen Geopark atau BIG Downhill 2026 di Kabupaten Banyuwangi, Jawa Timur.</p><p>Soekarno Run digelar pada Minggu, 20 September 2026, dengan diikuti sekitar 3.400 pelari dari berbagai wilayah Indonesia, mulai Aceh hingga Papua. Sementara itu, BIG Downhill 2026 berlangsung pada Sabtu hingga Minggu, 19–20 September 2026, di Gantasan Ijen Bike Park.</p><p>Soekarno Run menghadirkan kategori Half Marathon 21K, 10K, 5K, 3K, dan 1K. Para peserta memperebutkan total hadiah mencapai Rp1 miliar. Perlombaan dimulai dan berakhir di Pendopo Sabha Swagata Blambangan, serta melewati sejumlah kawasan kota, termasuk Taman Sritanjung.</p><p>Bupati Banyuwangi Ipuk Fiestiandani mengatakan, kedua event tersebut menjadi bagian dari upaya mengembangkan sport tourism yang memadukan olahraga, wisata, dan penguatan ekonomi masyarakat.</p><p>Sementara itu, BIG Downhill 2026 menghadirkan kompetisi balap sepeda berstandar internasional dan masuk kalender Union Cycliste Internationale atau UCI. Lintasan di Gantasan Ijen Bike Park memiliki turunan curam, kelokan tajam, serta berbagai rintangan alami.</p><p>Kedua event tersebut juga memberikan dampak bagi sektor akomodasi, kuliner, transportasi, dan UMKM lokal.</p><p>Demikian informasi mengenai Soekarno Run dan BIG Downhill 2026 Banyuwangi. Semoga kegiatan ini semakin memperkenalkan potensi olahraga, alam, dan budaya Banyuwangi kepada masyarakat luas.</p><p>Saya……undur diri.</p><p>Wassalamu’alaikum warahmatullahi wabarakatuh.</p>`},
- {id:'nasional',label:'Berita Nasional · Hardiknas',kicker:'BERITA NASIONAL',category:'PENDIDIKAN INDONESIA',recommended:120,title:'Hardiknas 2026: Pendidikan untuk Mencerdaskan dan Membentuk Karakter Bangsa',body:`<p>Assalamu’alaikum warahmatullahi wabarakatuh.</p><p>Selamat pagi/siang, pemirsa. Anda kembali menyaksikan informasi terkini. Berikut berita selengkapnya.</p><p><strong>BANYUWANGI –</strong> Kementerian Pendidikan Dasar dan Menengah menggelar upacara peringatan Hari Pendidikan Nasional atau Hardiknas 2026 di Banyuwangi, Jawa Timur, Sabtu, 2 Mei 2026. Kegiatan tersebut mengusung tema “Menguatkan Partisipasi Semesta Mewujudkan Pendidikan Bermutu untuk Semua.”</p><p>Upacara dipimpin langsung oleh Menteri Pendidikan Dasar dan Menengah Abdul Mu’ti dan diikuti ribuan insan pendidikan. Dalam amanatnya, Abdul Mu’ti menegaskan bahwa pendidikan bukan hanya untuk mencerdaskan kehidupan bangsa, tetapi juga membangun watak dan peradaban bangsa.</p><p>Untuk mewujudkan tujuan tersebut, Kemendikdasmen mendorong penerapan Pembelajaran Mendalam atau Deep Learning yang menempatkan proses belajar sebagai pengalaman bermakna serta mengembangkan potensi murid secara utuh.</p><p>Pemerintah juga memperkuat revitalisasi satuan pendidikan, digitalisasi pembelajaran, peningkatan kompetensi guru, literasi, numerasi, STEM, serta Tes Kemampuan Akademik atau TKA.</p><p>Abdul Mu’ti mengajak sekolah, keluarga, masyarakat, dan media memperkuat kolaborasi dalam memajukan pendidikan nasional. Menurutnya, pembangunan pendidikan membutuhkan keterlibatan berbagai pihak agar tujuan pendidikan bermutu dapat diwujudkan secara bersama.</p><p>Peringatan Hardiknas 2026 semakin meriah dengan pagelaran seni “Kuntulan Ewon” yang melibatkan 1.100 pelajar dari berbagai jenjang pendidikan.</p><p>Kegiatan ini menjadi momentum untuk meneguhkan komitmen bersama menghadirkan pendidikan yang berkualitas dan bermakna bagi seluruh masyarakat Indonesia.</p><p>Demikian informasi Hardiknas 2026 dari Banyuwangi. Semoga semangat kolaborasi terus tumbuh demi mencetak generasi Indonesia yang cerdas dan berkarakter.</p><p>Saya ………, undur diri.</p><p>Wassalamu’alaikum warahmatullahi wabarakatuh.</p>`},
- {id:'internasional',label:'Berita Internasional · iGeo',kicker:'BERITA INTERNASIONAL',category:'PRESTASI DUNIA',recommended:180,title:'Wakil Indonesia Raih Dua Emas dan Satu Perunggu di iGeo 2026',body:`<p>Assalamu’alaikum warahmatullahi wabarakatuh.</p><p>Selamat pagi/siang, pemirsa. Kabar membanggakan kembali datang dari talenta muda Indonesia di ajang internasional. Berikut berita selengkapnya.</p><p><strong>TANGERANG, BANTEN –</strong> Murid Indonesia berhasil meraih dua medali emas, satu medali perunggu, dan honorable mention poster presentation dalam International Geography Olympiad atau iGeo 2026 yang berlangsung pada 11 hingga 17 Agustus 2026 di Istanbul, Turki.</p><p>Dua medali emas diraih Kaleb Lash Elnathan Naibaho dari SMA Labschool Kebayoran, DKI Jakarta, dan Rafif Adinata Ramadhan dari MAN 1 Pekanbaru, Riau. Sementara medali perunggu diraih Arkha Enzi Anagi, juga dari SMA Labschool Kebayoran. Tim Indonesia turut memperoleh honorable mention melalui poster “The Ronda System: The Indonesian Tradition to Keep Communities Safe.”</p><p>Keempat murid tersebut sebelumnya merupakan peraih medali Olimpiade Sains Nasional atau OSN bidang Geografi. Mereka mengikuti pembinaan dan seleksi intensif oleh Pusat Prestasi Nasional, Kemendikdasmen, serta mendapat pendampingan dari pembina Dewayany dari BRIN dan Asri Oktavioni Indraswari dari Universitas Indonesia.</p><p>iGeo merupakan kompetisi geografi internasional tahunan bagi siswa sekolah menengah atas. Pada 2026, kompetisi digelar di Turki dan diikuti 184 peserta dari 50 negara. Prestasi ini menjadi hasil dari proses pembinaan talenta yang dilakukan secara bertahap dan berkelanjutan. Capaian tersebut sekaligus menunjukkan kiprah pelajar Indonesia dalam kompetisi akademik di tingkat internasional.</p><p>Demikian informasi prestasi pelajar Indonesia di iGeo 2026. Semoga capaian ini terus menginspirasi generasi muda untuk berprestasi di tingkat dunia.</p><p>Saya ………, undur diri.</p><p>Wassalamu’alaikum warahmatullahi wabarakatuh.</p>`}
-];
-const $=id=>document.getElementById(id);let stream=null,raf=null,remaining=120,lastTick=0,scrollOn=false,toastTimer,wordCount=0,wordIndex=-1,wordProgress=0,scrollPps=0,scrollOffset=0;
-const select=$('storySelect');stories.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.label;select.append(o)});
-function renderStory(){const s=stories.find(x=>x.id===select.value);$('kicker').textContent=s.kicker;$('category').textContent=s.category;$('headline').textContent=s.title;$('script').innerHTML=s.body;prepareWords();$('teleScroll').scrollTop=0;wordIndex=-1;wordProgress=0;stopRun();$('telePanel').classList.remove('reading');$('duration').value=String(s.recommended);setDuration()}
-function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3300)}
-function prepareWords(){const text=$('script').textContent;wordCount=(text.match(/\S+/g)||[]).length;scrollOffset=0;$('script').style.transform='translate3d(0,0,0)'}function showWord(index){wordIndex=index}function measureScrollSpeed(){const distance=Math.max(0,$('teleScroll').scrollHeight-$('teleScroll').clientHeight);scrollPps=distance/Math.max(1,wordCount)*Number($('speed').value)/60}
-function syncFullscreen(){const active=Boolean(document.fullscreenElement||document.webkitFullscreenElement);$('fullscreenLabel').textContent=active?'Keluar Fullscreen':'Layar Penuh';$('fullscreenBtn').setAttribute('aria-label',active?'Keluar dari layar penuh':'Masuk layar penuh')}async function toggleFullscreen(){const root=document.documentElement;try{if(document.fullscreenElement||document.webkitFullscreenElement){if(document.exitFullscreen)await document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen()}else if(root.requestFullscreen)await root.requestFullscreen();else if(root.webkitRequestFullscreen)root.webkitRequestFullscreen();else showToast('Mode layar penuh tidak didukung browser ini. Gunakan tombol fullscreen pada browser IFP.')}catch(e){showToast('Browser menolak layar penuh. Coba tekan tombol sekali lagi.')}}$('fullscreenBtn').addEventListener('click',toggleFullscreen);document.addEventListener('fullscreenchange',syncFullscreen);document.addEventListener('webkitfullscreenchange',syncFullscreen);
-let customBgUrl=null;$('sceneSelect').addEventListener('change',e=>{const stage=$('stage');stage.dataset.scene=e.target.value;stage.classList.remove('custom');stage.style.backgroundImage='';if(customBgUrl){URL.revokeObjectURL(customBgUrl);customBgUrl=null}const labels={main:'BERITA HARI INI',breaking:'BERITA UTAMA',world:'KABAR DUNIA',banyuwangi:'KABAR BANYUWANGI'};$('studioLabel').textContent=labels[e.target.value]});$('uploadBgBtn').addEventListener('click',()=>$('bgUpload').click());$('bgUpload').addEventListener('change',e=>{const file=e.target.files?.[0];if(!file)return;if(customBgUrl)URL.revokeObjectURL(customBgUrl);customBgUrl=URL.createObjectURL(file);const stage=$('stage');stage.classList.add('custom');stage.style.backgroundImage=`linear-gradient(#06132666,#06132688),url("${customBgUrl}")`;$('studioLabel').textContent='STUDIO PILIHAN';showToast('Latar studio pilihan diterapkan.')});
-function mmss(n){return `${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`}
-function setDuration(){remaining=Number($('duration').value);$('timer').textContent=mmss(remaining);$('timer').classList.remove('warning','done')}
-function stopRun(){if(raf)cancelAnimationFrame(raf);raf=null;scrollOn=false;$('pauseBtn').disabled=true;$('startBtn').disabled=false}
-function tick(now){if(!scrollOn)return;if(!lastTick)lastTick=now;const dt=(now-lastTick)/1000;lastTick=now;remaining=Math.max(0,remaining-dt);$('timer').textContent=mmss(Math.ceil(remaining));$('timer').classList.toggle('warning',remaining<15&&remaining>0);wordProgress+=dt*Number($('speed').value)/60;while(wordProgress>=1&&wordIndex<wordCount-1){wordProgress-=1;showWord(wordIndex+1)}scrollOffset+=dt*scrollPps;$('script').style.transform=`translate3d(0, -${scrollOffset}px, 0)`;if(remaining<=0){remaining=0;$('timer').textContent='00:00';$('timer').classList.remove('warning');$('timer').classList.add('done');stopRun();showToast('Waktu latihan selesai. Tarik napas dan tutup siaran dengan tenang.');return}if(wordIndex>=wordCount-1){stopRun();showToast('Naskah selesai. Tekan Ulang untuk berlatih lagi.');return}raf=requestAnimationFrame(tick)}
-function start(){if(scrollOn)return;if(remaining<=0)setDuration();if(wordIndex<0)showWord(0);$('telePanel').classList.add('reading');measureScrollSpeed();scrollOn=true;lastTick=0;$('startBtn').disabled=true;$('pauseBtn').disabled=false;raf=requestAnimationFrame(tick)}
-$('startBtn').addEventListener('click',start);$('pauseBtn').addEventListener('click',()=>{if(scrollOn){scrollOn=false;if(raf)cancelAnimationFrame(raf);raf=null;$('startBtn').disabled=false;$('pauseBtn').disabled=true}});$('restartBtn').addEventListener('click',()=>{stopRun();setDuration();$('teleScroll').scrollTop=0;wordIndex=-1;wordProgress=0;scrollOffset=0;$('script').style.transform='translate3d(0,0,0)';$('telePanel').classList.remove('reading')});select.addEventListener('change',renderStory);$('duration').addEventListener('change',()=>{stopRun();setDuration()});
-$('fontSize').addEventListener('input',e=>{$('script').style.fontSize=e.target.value+'px';$('fontValue').textContent=e.target.value+' px';if(scrollOn)measureScrollSpeed()});$('speed').addEventListener('input',e=>{$('speedValue').textContent=e.target.value+' kpm';if(scrollOn)measureScrollSpeed()});window.addEventListener('resize',()=>{if(scrollOn)measureScrollSpeed()});
-$('cameraBtn').addEventListener('click',async()=>{if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;$('video').srcObject=null;$('placeholder').classList.remove('hidden');$('camStatus').textContent='KAMERA NONAKTIF';$('cameraBtn').textContent='◉  Aktifkan Kamera';return}if(!navigator.mediaDevices?.getUserMedia){showToast('Kamera memerlukan HTTPS atau localhost pada browser yang mendukung.');return}try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});$('video').srcObject=stream;$('placeholder').classList.add('hidden');$('camStatus').textContent='KAMERA AKTIF';$('cameraBtn').textContent='■  Matikan Kamera'}catch(err){const m=err.name==='NotAllowedError'?'Izin kamera ditolak. Izinkan akses kamera di browser lalu coba lagi.':err.name==='NotFoundError'?'Kamera tidak ditemukan pada perangkat ini.':'Kamera tidak bisa dibuka. Pastikan izin aktif dan halaman memakai HTTPS atau localhost.';showToast(m)}});
-function updateClock(){const d=new Date();$('clock').textContent=new Intl.DateTimeFormat('id-ID',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(d)+' WIB'}setInterval(updateClock,1000);updateClock();renderStory();
-window.addEventListener('beforeunload',()=>stream?.getTracks().forEach(t=>t.stop()));
-</script>
-</body></html>
 
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="brand">
+    🎙️ TELEPROMPTER · LOMBA BACA BERITA
+    <small>Bulan Bahasa 2026 · SMK Muhammadiyah 2 Genteng</small>
+  </div>
+  <select id="scriptSelect">
+    <option value="lokal">📰 Berita Lokal — Soekarno Run & BIG Downhill (228 kata)</option>
+    <option value="nasional">📰 Berita Nasional — Hardiknas 2026 (230 kata)</option>
+    <option value="internasional">📰 Berita Internasional — iGeo 2026 (337 kata)</option>
+    <option value="custom">✏ Naskah Custom</option>
+  </select>
+  <button id="btnEditScript" class="secondary">✏ Edit Naskah</button>
+</div>
+
+<!-- CONTROLS -->
+<div id="controls">
+  <button id="btnPlay">▶ MULAI <span style="opacity:.6;font-size:11px">(Space)</span></button>
+  <button id="btnReset" class="secondary">⟲ ULANG (R)</button>
+
+  <div class="speed-group" title="Kecepatan scroll teleprompter">
+    <span class="speed-label">⚡ KECEPATAN:</span>
+    <button class="speed-btn" data-speed="150">🐢 Lambat</button>
+    <button class="speed-btn active" data-speed="90">▶ Normal</button>
+    <button class="speed-btn" data-speed="70">⚡ Cepat</button>
+    <button class="speed-btn" data-speed="55">🚀 Kilat</button>
+  </div>
+
+  <div class="slider-group">
+    <label>TARGET WAKTU</label>
+    <input type="range" id="targetTime" min="60" max="180" step="5" value="90">
+    <span class="val" id="targetLabel">01:30</span>
+  </div>
+
+  <div class="slider-group">
+    <label>UKURAN HURUF</label>
+    <input type="range" id="fontSize" min="28" max="100" value="56">
+    <span class="val" id="fontLabel">56px</span>
+  </div>
+
+  <button id="btnCamera" class="secondary" title="Nyalakan/matikan kamera">🎥 Kamera (C)</button>
+  <button id="btnFullscreen" class="secondary">⛶ Fullscreen (F)</button>
+  <button id="btnMirror" class="secondary">⇄ Mirror</button>
+  <button id="btnSound" class="active" title="Aktif/Matikan suara">🔊 Suara</button>
+</div>
+
+<!-- 🎥 KAMERA NEWS ANCHOR (DRAGGABLE) -->
+<div id="cameraBox" class="size-m">
+  <div id="cameraDragHandle" title="Tahan & geser untuk pindah"></div>
+  <video id="cameraVideo" autoplay playsinline muted></video>
+  <div id="cameraError">
+    <div class="icon">📷</div>
+    <div id="cameraErrorMsg">Kamera tidak dapat diakses</div>
+    <div style="font-size:11px;color:#94a3b8;" id="cameraErrorHint"></div>
+  </div>
+  <div class="cam-ctrl">
+    <button id="camMirror" title="Balik cermin">⇄</button>
+    <button id="camSize" title="Ukuran S/M/L">▣</button>
+    <button id="camBg" title="Mode background">▤</button>
+    <button id="camClose" title="Matikan kamera">✕</button>
+  </div>
+</div>
+
+<!-- PROMPTER -->
+<div id="prompterWrap">
+  <div id="prompter"></div>
+</div>
+
+<div id="guide"></div>
+<div class="arrow" id="arrowL">▶</div>
+<div class="arrow" id="arrowR">◀</div>
+
+<!-- TIMER BOX -->
+<div id="timerBox">
+  <div class="label">SISA WAKTU</div>
+  <div id="timer">01:30</div>
+  <div id="wpm">WPM: <span id="wpmValue">0</span></div>
+</div>
+
+<!-- REC DOT -->
+<div id="recDot">LIVE</div>
+
+<!-- STATUS BAR -->
+<div id="statusbar">
+  <div class="struct">
+    <span><span class="dot" style="background:#fbbf24"></span>Pembuka</span>
+    <span><span class="dot" style="background:#ffffff"></span>Isi</span>
+    <span><span class="dot" style="background:#60a5fa"></span>Penutup</span>
+  </div>
+  <div>Total: <b id="wordCount">0</b> kata</div>
+  <div>Progress: <b id="progress">0%</b></div>
+  <div>Status: <b id="status">Siap</b></div>
+</div>
+
+<!-- EDITOR -->
+<div id="editor">
+  <h2>✏ Edit Naskah Berita</h2>
+  <div class="hint">Pisahkan tiap paragraf dengan ENTER. Judul diawali "# ". Bagian: "## PEMBUKA", "## ISI", "## PENUTUP".</div>
+  <textarea id="scriptInput" placeholder="Tulis naskah berita..."></textarea>
+  <div class="actions">
+    <button id="btnSaveScript">💾 SIMPAN</button>
+    <button id="btnCancelEdit" class="secondary">BATAL</button>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div id="countdown">3</div>
+
+<!-- AUDIO HINT -->
+<div id="audioHint">
+  <b>🔊 Suara Siap!</b><br>
+  Klik di mana saja untuk mengaktifkan audio<br>
+  <span style="font-size:12px;color:#94a3b8;">(Dibutuhkan kebijakan autoplay browser)</span>
+</div>
+
+<script>
+/* ============================================================
+   TELEPROMPTER - LOMBA BACA BERITA
+   Bulan Bahasa 2026 - SMK Muhammadiyah 2 Genteng
+   + AUDIO COUNTDOWN
+   + TOMBOL PRESET KECEPATAN
+   + KAMERA NEWS ANCHOR (DRAGGABLE)
+   ============================================================ */
+
+// ===== NASKAH RESMI DARI JUKNIS =====
+const SCRIPTS = {
+  lokal: {
+    title: "Ribuan Peserta Ramaikan Soekarno Run dan BIG Downhill 2026 Banyuwangi",
+    pembuka: [
+      "Assalamu'alaikum warahmatullahi wabarakatuh.",
+      "Selamat pagi, pemirsa. Anda kembali menyaksikan informasi terkini. Berikut berita selengkapnya."
+    ],
+    isi: [
+      "BANYUWANGI — Ribuan peserta dari berbagai daerah di Indonesia hingga atlet internasional meramaikan Soekarno Run dan Banyuwangi Ijen Geopark atau BIG Downhill 2026 di Kabupaten Banyuwangi, Jawa Timur.",
+      "Soekarno Run digelar pada Minggu, 20 September 2026, dengan diikuti sekitar 3.400 pelari dari berbagai wilayah Indonesia, mulai Aceh hingga Papua. Sementara itu, BIG Downhill 2026 berlangsung pada Sabtu hingga Minggu, 19-20 September 2026, di Gantasan Ijen Bike Park.",
+      "Soekarno Run menghadirkan kategori Half Marathon 21K, 10K, 5K, 3K, dan 1K. Para peserta memperebutkan total hadiah mencapai Rp1 miliar. Perlombaan dimulai dan berakhir di Pendopo Sabha Swagata Blambangan, serta melewati sejumlah kawasan kota, termasuk Taman Sritanjung.",
+      "Bupati Banyuwangi Ipuk Fiestiandani mengatakan, kedua event tersebut menjadi bagian dari upaya mengembangkan sport tourism yang memadukan olahraga, wisata, dan penguatan ekonomi masyarakat.",
+      "Sementara itu, BIG Downhill 2026 menghadirkan kompetisi balap sepeda berstandar internasional dan masuk kalender Union Cycliste Internationale atau UCI. Lintasan di Gantasan Ijen Bike Park memiliki turunan curam, kelokan tajam, serta berbagai rintangan alami.",
+      "Kedua event tersebut juga memberikan dampak bagi sektor akomodasi, kuliner, transportasi, dan UMKM lokal."
+    ],
+    penutup: [
+      "Demikian informasi mengenai Soekarno Run dan BIG Downhill 2026 Banyuwangi. Semoga kegiatan ini semakin memperkenalkan potensi olahraga, alam, dan budaya Banyuwangi kepada masyarakat luas.",
+      "Saya, ... undur diri.",
+      "Wassalamu'alaikum warahmatullahi wabarakatuh."
+    ]
+  },
+  nasional: {
+    title: "Hardiknas 2026: Pendidikan untuk Mencerdaskan dan Membentuk Karakter Bangsa",
+    pembuka: [
+      "Assalamu'alaikum warahmatullahi wabarakatuh.",
+      "Selamat pagi, pemirsa. Anda kembali menyaksikan informasi terkini. Berikut berita selengkapnya."
+    ],
+    isi: [
+      "BANYUWANGI — Kementerian Pendidikan Dasar dan Menengah menggelar upacara peringatan Hari Pendidikan Nasional atau Hardiknas 2026 di Banyuwangi, Jawa Timur, Sabtu, 2 Mei 2026. Kegiatan tersebut mengusung tema Menguatkan Partisipasi Semesta Mewujudkan Pendidikan Bermutu untuk Semua.",
+      "Upacara dipimpin langsung oleh Menteri Pendidikan Dasar dan Menengah Abdul Mu'ti dan diikuti ribuan insan pendidikan. Dalam amanatnya, Abdul Mu'ti menegaskan bahwa pendidikan bukan hanya untuk mencerdaskan kehidupan bangsa, tetapi juga membangun watak dan peradaban bangsa.",
+      "Untuk mewujudkan tujuan tersebut, Kemendikdasmen mendorong penerapan Pembelajaran Mendalam atau Deep Learning yang menempatkan proses belajar sebagai pengalaman bermakna serta mengembangkan potensi murid secara utuh.",
+      "Pemerintah juga memperkuat revitalisasi satuan pendidikan, digitalisasi pembelajaran, peningkatan kompetensi guru, literasi, numerasi, STEM, serta Tes Kemampuan Akademik atau TKA.",
+      "Abdul Mu'ti mengajak sekolah, keluarga, masyarakat, dan media memperkuat kolaborasi dalam memajukan pendidikan nasional. Menurutnya, pembangunan pendidikan membutuhkan keterlibatan berbagai pihak agar tujuan pendidikan bermutu dapat diwujudkan secara bersama.",
+      "Peringatan Hardiknas 2026 semakin meriah dengan pagelaran seni Kuntulan Ewon yang melibatkan 1.100 pelajar dari berbagai jenjang pendidikan.",
+      "Kegiatan ini menjadi momentum untuk meneguhkan komitmen bersama menghadirkan pendidikan yang berkualitas dan bermakna bagi seluruh masyarakat Indonesia."
+    ],
+    penutup: [
+      "Demikian informasi Hardiknas 2026 dari Banyuwangi. Semoga semangat kolaborasi terus tumbuh demi mencetak generasi Indonesia yang cerdas dan berkarakter.",
+      "Saya, ... undur diri.",
+      "Wassalamu'alaikum warahmatullahi wabarakatuh."
+    ]
+  },
+  internasional: {
+    title: "Wakil Indonesia Raih Dua Emas dan Satu Perunggu di iGeo 2026",
+    pembuka: [
+      "Assalamu'alaikum warahmatullahi wabarakatuh.",
+      "Selamat pagi, pemirsa. Kabar membanggakan kembali datang dari talenta muda Indonesia di ajang internasional. Berikut berita selengkapnya."
+    ],
+    isi: [
+      "TANGERANG, BANTEN — Murid Indonesia berhasil meraih dua medali emas, satu medali perunggu, dan honorable mention poster presentation dalam International Geography Olympiad atau iGeo 2026 yang berlangsung pada 11 hingga 17 Agustus 2026 di Istanbul, Turki.",
+      "Dua medali emas diraih Kaleb Lash Elnathan Naibaho dari SMA Labschool Kebayoran, DKI Jakarta, dan Rafif Adinata Ramadhan dari MAN 1 Pekanbaru, Riau. Sementara medali perunggu diraih Arkha Enzi Anagi, juga dari SMA Labschool Kebayoran. Tim Indonesia turut memperoleh honorable mention melalui poster The Ronda System: The Indonesian Tradition to Keep Communities Safe.",
+      "Keempat murid tersebut sebelumnya merupakan peraih medali Olimpiade Sains Nasional atau OSN bidang Geografi. Mereka mengikuti pembinaan dan seleksi intensif oleh Pusat Prestasi Nasional, Kemendikdasmen, serta mendapat pendampingan dari pembina Dewayany dari BRIN dan Asri Oktavioni Indraswari dari Universitas Indonesia.",
+      "iGeo merupakan kompetisi geografi internasional tahunan bagi siswa sekolah menengah atas. Pada 2026, kompetisi digelar di Turki dan diikuti 184 peserta dari 50 negara. Prestasi ini menjadi hasil dari proses pembinaan talenta yang dilakukan secara bertahap dan berkelanjutan. Capaian tersebut sekaligus menunjukkan kiprah pelajar Indonesia dalam kompetisi akademik di tingkat internasional."
+    ],
+    penutup: [
+      "Demikian informasi prestasi pelajar Indonesia di iGeo 2026. Semoga capaian ini terus menginspirasi generasi muda untuk berprestasi di tingkat dunia.",
+      "Saya, ... undur diri.",
+      "Wassalamu'alaikum warahmatullahi wabarakatuh."
+    ]
+  }
+};
+
+// ===== ELEMEN =====
+const $ = id => document.getElementById(id);
+const prompter = $('prompter');
+const btnPlay = $('btnPlay');
+const btnReset = $('btnReset');
+const btnEditScript = $('btnEditScript');
+const btnFullscreen = $('btnFullscreen');
+const btnMirror = $('btnMirror');
+const btnSound = $('btnSound');
+const btnCamera = $('btnCamera');
+const scriptSelect = $('scriptSelect');
+const targetTimeSlider = $('targetTime');
+const targetLabel = $('targetLabel');
+const fontSizeSlider = $('fontSize');
+const fontLabel = $('fontLabel');
+const timer = $('timer');
+const wpmValue = $('wpmValue');
+const wordCountEl = $('wordCount');
+const progressEl = $('progress');
+const statusEl = $('status');
+const editor = $('editor');
+const scriptInput = $('scriptInput');
+const btnSaveScript = $('btnSaveScript');
+const btnCancelEdit = $('btnCancelEdit');
+const countdown = $('countdown');
+const recDot = $('recDot');
+const audioHint = $('audioHint');
+
+// Elemen kamera
+const cameraBox = $('cameraBox');
+const cameraVideo = $('cameraVideo');
+const cameraDragHandle = $('cameraDragHandle');
+const camMirrorBtn = $('camMirror');
+const camSizeBtn = $('camSize');
+const camBgBtn = $('camBg');
+const camCloseBtn = $('camClose');
+const cameraErrorMsg = $('cameraErrorMsg');
+const cameraErrorHint = $('cameraErrorHint');
+
+// ===== STATE =====
+let currentScript = SCRIPTS.lokal;
+let currentKey = 'lokal';
+let isPlaying = false;
+let isMirrored = false;
+let position = 0;
+let lastTime = 0;
+let elapsedMs = 0;
+let targetSec = 90;
+let animId = null;
+let countdownTimer = null;
+let lastHighlighted = null;
+let lastWarningSec = -1;
+let totalScrollHeight = 0;
+let pxPerSecond = 0;
+
+// State kamera
+let camStream = null;
+let camActive = false;
+let camMirrorState = true;
+let camSizeState = 'm';
+let camBgMode = false;
+
+// ===== AUDIO ENGINE =====
+let audioCtx = null;
+let soundEnabled = true;
+
+function initAudio() {
+  if (!audioCtx) {
+    try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+    catch(e) { console.warn('Audio tidak didukung:', e); }
+  }
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+}
+
+function beep(freq, dur, type = 'sine', vol = 0.3, delay = 0) {
+  if (!soundEnabled || !audioCtx) return;
+  const t = audioCtx.currentTime + delay;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0, t);
+  gain.gain.linearRampToValueAtTime(vol, t + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(t);
+  osc.stop(t + dur + 0.05);
+}
+
+function playCountdownBeep(n) {
+  const freqs = { 3: 660, 2: 770, 1: 880 };
+  const f = freqs[n] || 660;
+  beep(f, 0.18, 'sine', 0.35, 0);
+  beep(f * 2, 0.12, 'sine', 0.12, 0);
+}
+function playStartBeep() {
+  beep(523.25, 0.55, 'sine', 0.35, 0);
+  beep(659.25, 0.55, 'sine', 0.30, 0.03);
+  beep(783.99, 0.70, 'sine', 0.35, 0.06);
+  beep(1046.5, 0.85, 'sine', 0.25, 0.12);
+}
+function playWarningBeep() {
+  beep(880, 0.12, 'square', 0.18, 0);
+  beep(880, 0.12, 'square', 0.18, 0.18);
+}
+function playEndBeep() {
+  beep(880, 0.25, 'sine', 0.4, 0);
+  beep(660, 0.25, 'sine', 0.4, 0.28);
+  beep(440, 0.55, 'sine', 0.4, 0.56);
+}
+function playClickBeep() { beep(1200, 0.05, 'sine', 0.15); }
+
+// ===== KAMERA ENGINE =====
+async function startCamera() {
+  if (camActive) return;
+
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    showCameraError('Browser tidak mendukung kamera', 'Gunakan Chrome/Edge terbaru via HTTPS atau localhost');
+    return;
+  }
+
+  try {
+    camStream = await navigator.mediaDevices.getUserMedia({
+      video: {
+        width: { ideal: 1280 },
+        height: { ideal: 720 },
+        facingMode: 'user'
+      },
+      audio: false
+    });
+
+    cameraVideo.srcObject = camStream;
+    cameraBox.classList.remove('error');
+    cameraBox.classList.add('on');
+
+    // ✅ Kembalikan posisi terakhir jika ada
+    const savedPos = localStorage.getItem('camPos');
+    if (savedPos) {
+      try {
+        const p = JSON.parse(savedPos);
+        // validasi masih dalam viewport
+        if (p.left >= 0 && p.top >= 0 &&
+            p.left < window.innerWidth - 50 && p.top < window.innerHeight - 50) {
+          cameraBox.style.left = p.left + 'px';
+          cameraBox.style.top = p.top + 'px';
+          cameraBox.style.right = 'auto';
+          cameraBox.style.bottom = 'auto';
+        }
+      } catch(e) {}
+    } else {
+      // Posisi default kanan-bawah
+      cameraBox.style.left = '';
+      cameraBox.style.top = '';
+      cameraBox.style.right = '20px';
+      cameraBox.style.bottom = '60px';
+    }
+
+    applyCameraStyles();
+    camActive = true;
+    btnCamera.classList.add('active');
+    btnCamera.textContent = '🎥 Kamera ON';
+    playClickBeep();
+  } catch(err) {
+    console.warn('Kamera gagal:', err);
+    let msg = 'Kamera tidak dapat diakses';
+    let hint = '';
+    if (err.name === 'NotAllowedError') {
+      msg = 'Izin kamera ditolak';
+      hint = 'Klik ikon 🔒 di address bar → izinkan kamera';
+    } else if (err.name === 'NotFoundError' || err.name === 'DevicesNotFoundError') {
+      msg = 'Tidak ada kamera terdeteksi';
+      hint = 'Pastikan kamera terpasang dan tidak dipakai aplikasi lain';
+    } else if (err.name === 'NotReadableError') {
+      msg = 'Kamera sedang dipakai aplikasi lain';
+      hint = 'Tutup Zoom/Meet/OBS yang sedang aktif';
+    } else {
+      hint = err.message || '';
+    }
+    showCameraError(msg, hint);
+  }
+}
+
+function stopCamera() {
+  if (camStream) {
+    camStream.getTracks().forEach(t => t.stop());
+    camStream = null;
+  }
+  cameraVideo.srcObject = null;
+  cameraBox.classList.remove('on');
+  cameraBox.classList.remove('error');
+  cameraBox.classList.remove('fullscreen-bg');
+  camActive = false;
+  camBgMode = false;
+  btnCamera.classList.remove('active');
+  btnCamera.textContent = '🎥 Kamera (C)';
+  playClickBeep();
+}
+
+function toggleCamera() {
+  if (camActive) stopCamera();
+  else startCamera();
+}
+
+function showCameraError(msg, hint) {
+  cameraErrorMsg.textContent = msg;
+  cameraErrorHint.textContent = hint || '';
+  cameraBox.classList.add('on');
+  cameraBox.classList.add('error');
+  setTimeout(() => {
+    cameraBox.classList.remove('on');
+    cameraBox.classList.remove('error');
+  }, 5000);
+}
+
+function applyCameraStyles() {
+  cameraBox.classList.toggle('no-mirror', !camMirrorState);
+  cameraBox.classList.remove('size-s','size-m','size-l');
+  cameraBox.classList.add('size-' + camSizeState);
+  cameraBox.classList.toggle('fullscreen-bg', camBgMode);
+}
+
+// ===== 🎥 DRAG KAMERA =====
+let dragState = { active: false, offsetX: 0, offsetY: 0, pointerId: null };
+
+function onPointerDown(e) {
+  // Jangan drag saat mode background
+  if (camBgMode) return;
+  // Jangan drag kalau yang diklik adalah tombol kontrol
+  if (e.target.closest('.cam-ctrl')) return;
+
+  dragState.active = true;
+  dragState.pointerId = e.pointerId;
+
+  const rect = cameraBox.getBoundingClientRect();
+  dragState.offsetX = e.clientX - rect.left;
+  dragState.offsetY = e.clientY - rect.top;
+
+  cameraBox.classList.add('dragging');
+  cameraBox.setPointerCapture && cameraBox.setPointerCapture(e.pointerId);
+
+  e.preventDefault();
+}
+
+function onPointerMove(e) {
+  if (!dragState.active) return;
+
+  let newLeft = e.clientX - dragState.offsetX;
+  let newTop = e.clientY - dragState.offsetY;
+
+  // Clamp supaya tidak keluar layar
+  const w = cameraBox.offsetWidth;
+  const h = cameraBox.offsetHeight;
+  const margin = 4;
+  newLeft = Math.max(margin, Math.min(window.innerWidth - w - margin, newLeft));
+  newTop = Math.max(60, Math.min(window.innerHeight - h - 40, newTop)); // jaga dari topbar & statusbar
+
+  // Ganti ke position via left/top (lepas right/bottom)
+  cameraBox.style.left = newLeft + 'px';
+  cameraBox.style.top = newTop + 'px';
+  cameraBox.style.right = 'auto';
+  cameraBox.style.bottom = 'auto';
+
+  e.preventDefault();
+}
+
+function onPointerUp(e) {
+  if (!dragState.active) return;
+  dragState.active = false;
+  cameraBox.classList.remove('dragging');
+  cameraBox.releasePointerCapture && cameraBox.releasePointerCapture(dragState.pointerId);
+
+  // Simpan posisi
+  const rect = cameraBox.getBoundingClientRect();
+  try {
+    localStorage.setItem('camPos', JSON.stringify({ left: rect.left, top: rect.top }));
+  } catch(err) {}
+}
+
+// Pasang listener drag
+cameraBox.addEventListener('pointerdown', onPointerDown);
+document.addEventListener('pointermove', onPointerMove);
+document.addEventListener('pointerup', onPointerUp);
+document.addEventListener('pointercancel', onPointerUp);
+
+// ===== UTIL =====
+const fmtTime = sec => {
+  sec = Math.max(0, Math.round(sec));
+  return String(Math.floor(sec/60)).padStart(2,'0') + ':' + String(sec%60).padStart(2,'0');
+};
+
+const countWords = () => {
+  let total = 0;
+  ['pembuka','isi','penutup'].forEach(sec => {
+    currentScript[sec].forEach(p => total += p.trim().split(/\s+/).length);
+  });
+  return total;
+};
+
+// ===== RENDER NASKAH =====
+function renderScript() {
+  prompter.innerHTML = '';
+  ['pembuka','isi','penutup'].forEach(section => {
+    currentScript[section].forEach(para => {
+      const p = document.createElement('p');
+      p.className = section;
+      p.style.marginBottom = '0.7em';
+      const words = para.split(/\s+/);
+      words.forEach((w, i) => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        if (/\d/.test(w)) span.classList.add('num');
+        span.textContent = w;
+        p.appendChild(span);
+        if (i < words.length - 1) p.appendChild(document.createTextNode(' '));
+      });
+      prompter.appendChild(p);
+    });
+  });
+  position = 0;
+  applyTransform();
+  wordCountEl.textContent = countWords();
+  recalcSpeed();
+}
+
+// ===== KECEPATAN =====
+function recalcSpeed() {
+  totalScrollHeight = Math.max(1, prompter.scrollHeight - window.innerHeight * 0.9);
+  pxPerSecond = totalScrollHeight / targetSec;
+  const words = countWords();
+  const wpm = Math.round(words / (targetSec / 60));
+  wpmValue.textContent = wpm + ' WPM';
+  if (!isPlaying) {
+    timer.textContent = fmtTime(targetSec);
+    timer.classList.remove('warning','danger');
+  }
+}
+
+// ===== TRANSFORM =====
+function applyTransform() {
+  const t = `translateY(${-position}px)` + (isMirrored ? ' scaleX(-1)' : '');
+  prompter.style.transform = t;
+  updateProgress();
+}
+
+function updateProgress() {
+  const total = Math.max(1, totalScrollHeight);
+  const pct = Math.min(100, Math.max(0, (position / total) * 100));
+  progressEl.textContent = Math.round(pct) + '%';
+}
+
+// ===== HIGHLIGHT KATA =====
+function highlightWord() {
+  const guideY = window.innerHeight * 0.42;
+  const words = prompter.querySelectorAll('.word');
+  let best = null, bestDist = Infinity;
+  words.forEach(w => {
+    const r = w.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > window.innerHeight) return;
+    const d = Math.abs((r.top + r.height/2) - guideY);
+    if (d < bestDist) { bestDist = d; best = w; }
+  });
+  if (best && best !== lastHighlighted) {
+    if (lastHighlighted) lastHighlighted.classList.remove('active');
+    best.classList.add('active');
+    lastHighlighted = best;
+  }
+}
+
+// ===== ANIMASI =====
+function animate(ts) {
+  if (!isPlaying) return;
+  if (!lastTime) lastTime = ts;
+  const delta = ts - lastTime;
+  lastTime = ts;
+  elapsedMs += delta;
+
+  position += (pxPerSecond * delta) / 1000;
+  applyTransform();
+  highlightWord();
+
+  const remaining = targetSec - elapsedMs / 1000;
+  timer.textContent = fmtTime(Math.max(0, remaining));
+
+  const secLeft = Math.ceil(remaining);
+  if (secLeft <= 5 && secLeft > 0 && secLeft !== lastWarningSec) {
+    playWarningBeep();
+    lastWarningSec = secLeft;
+  }
+
+  if (remaining <= 5 && remaining > 0) {
+    timer.classList.add('danger');
+    timer.classList.remove('warning');
+  } else if (remaining <= 15 && remaining > 5) {
+    timer.classList.add('warning');
+    timer.classList.remove('danger');
+  }
+
+  const done = position >= totalScrollHeight || remaining <= 0;
+  if (done) {
+    stopPrompter();
+    statusEl.textContent = '✅ SELESAI';
+    recDot.classList.remove('on');
+    playEndBeep();
+    return;
+  }
+
+  animId = requestAnimationFrame(animate);
+}
+
+// ===== KONTROL =====
+function startPrompter() {
+  if (isPlaying) { stopPrompter(); return; }
+  initAudio();
+
+  let n = 3;
+  countdown.textContent = n;
+  countdown.classList.add('show');
+  countdown.classList.add('tick');
+  statusEl.textContent = 'Bersiap...';
+  playCountdownBeep(n);
+
+  countdownTimer = setInterval(() => {
+    n--;
+    if (n > 0) {
+      countdown.textContent = n;
+      countdown.classList.remove('tick');
+      void countdown.offsetWidth;
+      countdown.classList.add('tick');
+      playCountdownBeep(n);
+    } else {
+      clearInterval(countdownTimer);
+      countdown.classList.remove('show');
+      playStartBeep();
+      beginPlay();
+    }
+  }, 1000);
+}
+
+function beginPlay() {
+  isPlaying = true;
+  lastTime = 0;
+  document.body.classList.add('running');
+  btnPlay.textContent = '⏸ JEDA (Space)';
+  btnPlay.classList.remove('active');
+  statusEl.textContent = '🔴 LIVE';
+  recDot.classList.add('on');
+  animId = requestAnimationFrame(animate);
+}
+
+function stopPrompter() {
+  isPlaying = false;
+  document.body.classList.remove('running');
+  btnPlay.textContent = '▶ MULAI (Space)';
+  btnPlay.classList.add('active');
+  if (animId) cancelAnimationFrame(animId);
+  animId = null;
+  lastTime = 0;
+  recDot.classList.remove('on');
+  if (statusEl.textContent === '🔴 LIVE') statusEl.textContent = '⏸ Dijeda';
+}
+
+function resetPrompter() {
+  stopPrompter();
+  if (countdownTimer) clearInterval(countdownTimer);
+  countdown.classList.remove('show');
+  position = 0;
+  elapsedMs = 0;
+  lastWarningSec = -1;
+  applyTransform();
+  if (lastHighlighted) { lastHighlighted.classList.remove('active'); lastHighlighted = null; }
+  timer.textContent = fmtTime(targetSec);
+  timer.classList.remove('warning','danger');
+  statusEl.textContent = 'Siap';
+  recDot.classList.remove('on');
+}
+
+// ===== SCRIPT HANDLING =====
+function loadScriptFromKey(key) {
+  if (key === 'custom') return;
+  currentScript = JSON.parse(JSON.stringify(SCRIPTS[key]));
+  currentKey = key;
+  renderScript();
+  resetPrompter();
+}
+
+// ===== EVENT LISTENERS =====
+btnPlay.addEventListener('click', startPrompter);
+btnReset.addEventListener('click', () => { playClickBeep(); resetPrompter(); });
+
+btnEditScript.addEventListener('click', () => {
+  playClickBeep();
+  stopPrompter();
+  let text = '';
+  text += '# ' + currentScript.title + '\n\n';
+  text += '## PEMBUKA\n' + currentScript.pembuka.join('\n') + '\n\n';
+  text += '## ISI\n' + currentScript.isi.join('\n') + '\n\n';
+  text += '## PENUTUP\n' + currentScript.penutup.join('\n');
+  scriptInput.value = text;
+  editor.classList.add('show');
+});
+
+btnSaveScript.addEventListener('click', () => {
+  const raw = scriptInput.value;
+  const lines = raw.split('\n');
+  const newScript = { title: currentScript.title, pembuka: [], isi: [], penutup: [] };
+  let section = null;
+
+  lines.forEach(line => {
+    const t = line.trim();
+    if (t.startsWith('# ') && !t.startsWith('## ')) {
+      newScript.title = t.substring(2);
+    } else if (t === '## PEMBUKA') section = 'pembuka';
+    else if (t === '## ISI') section = 'isi';
+    else if (t === '## PENUTUP') section = 'penutup';
+    else if (t && section) newScript[section].push(t);
+  });
+
+  if (!newScript.pembuka.length) newScript.pembuka = currentScript.pembuka;
+  if (!newScript.isi.length) newScript.isi = currentScript.isi;
+  if (!newScript.penutup.length) newScript.penutup = currentScript.penutup;
+
+  currentScript = newScript;
+  scriptSelect.value = 'custom';
+  currentKey = 'custom';
+  renderScript();
+  editor.classList.remove('show');
+  resetPrompter();
+  playClickBeep();
+});
+
+btnCancelEdit.addEventListener('click', () => editor.classList.remove('show'));
+
+scriptSelect.addEventListener('change', e => {
+  loadScriptFromKey(e.target.value);
+  playClickBeep();
+});
+
+targetTimeSlider.addEventListener('input', e => {
+  targetSec = +e.target.value;
+  targetLabel.textContent = fmtTime(targetSec);
+  recalcSpeed();
+
+  document.querySelectorAll('.speed-btn').forEach(b => {
+    b.classList.toggle('active', +b.dataset.speed === targetSec);
+  });
+});
+
+fontSizeSlider.addEventListener('input', e => {
+  const size = +e.target.value;
+  prompter.style.fontSize = size + 'px';
+  fontLabel.textContent = size + 'px';
+  setTimeout(() => { recalcSpeed(); }, 50);
+});
+
+btnFullscreen.addEventListener('click', () => {
+  playClickBeep();
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+});
+
+btnMirror.addEventListener('click', () => {
+  isMirrored = !isMirrored;
+  btnMirror.classList.toggle('active', isMirrored);
+  applyTransform();
+  playClickBeep();
+});
+
+btnSound.addEventListener('click', () => {
+  soundEnabled = !soundEnabled;
+  btnSound.classList.toggle('active', soundEnabled);
+  btnSound.textContent = soundEnabled ? '🔊 Suara' : '🔇 Bisu';
+  if (soundEnabled) {
+    initAudio();
+    playClickBeep();
+  }
+});
+
+// ===== ⚡ PRESET KECEPATAN =====
+const speedBtns = document.querySelectorAll('.speed-btn');
+
+speedBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const speed = +btn.dataset.speed;
+    targetTimeSlider.value = speed;
+    targetSec = speed;
+    targetLabel.textContent = fmtTime(targetSec);
+    speedBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    recalcSpeed();
+    playClickBeep();
+  });
+});
+
+// ===== 🎥 KAMERA KONTROL =====
+btnCamera.addEventListener('click', toggleCamera);
+
+camCloseBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  stopCamera();
+});
+
+camMirrorBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  camMirrorState = !camMirrorState;
+  applyCameraStyles();
+  playClickBeep();
+});
+
+camSizeBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  camSizeState = camSizeState === 's' ? 'm' : camSizeState === 'm' ? 'l' : 's';
+  applyCameraStyles();
+  // Reset posisi jika keluar viewport setelah resize
+  setTimeout(clampCameraInside, 50);
+  playClickBeep();
+});
+
+camBgBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  camBgMode = !camBgMode;
+  applyCameraStyles();
+  playClickBeep();
+});
+
+function clampCameraInside() {
+  if (camBgMode) return;
+  const rect = cameraBox.getBoundingClientRect();
+  let left = rect.left;
+  let top = rect.top;
+  let changed = false;
+  const margin = 4;
+
+  if (left + rect.width > window.innerWidth - margin) {
+    left = window.innerWidth - rect.width - margin;
+    changed = true;
+  }
+  if (top + rect.height > window.innerHeight - 40) {
+    top = window.innerHeight - rect.height - 40;
+    changed = true;
+  }
+  if (left < margin) { left = margin; changed = true; }
+  if (top < 60) { top = 60; changed = true; }
+
+  if (changed) {
+    cameraBox.style.left = left + 'px';
+    cameraBox.style.top = top + 'px';
+    cameraBox.style.right = 'auto';
+    cameraBox.style.bottom = 'auto';
+  }
+}
+
+// ===== KEYBOARD =====
+document.addEventListener('keydown', e => {
+  if (editor.classList.contains('show')) {
+    if (e.key === 'Escape') editor.classList.remove('show');
+    return;
+  }
+  switch(e.key.toLowerCase()) {
+    case ' ':
+      e.preventDefault();
+      startPrompter();
+      break;
+    case 'c':
+      if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        toggleCamera();
+      }
+      break;
+    case 'r': resetPrompter(); break;
+    case 'f':
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+      break;
+    case 'arrowup':
+      e.preventDefault();
+      position = Math.max(0, position - 50);
+      applyTransform(); highlightWord();
+      break;
+    case 'arrowdown':
+      e.preventDefault();
+      position += 50;
+      applyTransform(); highlightWord();
+      break;
+  }
+});
+
+// ===== INIT =====
+function init() {
+  prompter.style.fontSize = fontSizeSlider.value + 'px';
+  targetLabel.textContent = fmtTime(targetSec);
+  loadScriptFromKey('lokal');
+  statusEl.textContent = 'Siap';
+  setTimeout(() => recalcSpeed(), 100);
+
+  const enableOnFirstClick = () => {
+    initAudio();
+    if (audioCtx && audioCtx.state === 'running') {
+      audioHint.classList.remove('show');
+      document.removeEventListener('click', enableOnFirstClick);
+      document.removeEventListener('keydown', enableOnFirstClick);
+    }
+  };
+  document.addEventListener('click', enableOnFirstClick);
+  document.addEventListener('keydown', enableOnFirstClick);
+
+  setTimeout(() => {
+    if (!audioCtx || audioCtx.state !== 'running') {
+      audioHint.classList.add('show');
+    }
+  }, 800);
+}
+
+window.addEventListener('resize', () => {
+  applyTransform();
+  recalcSpeed();
+  clampCameraInside();
+});
+
+window.addEventListener('beforeunload', () => {
+  if (camStream) camStream.getTracks().forEach(t => t.stop());
+});
+
+init();
+</script>
+</body>
+</html>
