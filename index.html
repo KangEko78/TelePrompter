@@ -21,7 +21,21 @@
 .read-area{background:#000}.read-area:before,.read-area:after{background:linear-gradient(#000,transparent)}.read-area:after{background:linear-gradient(transparent,#000)}.reading-line{top:31%;height:2px;background:#df2636;opacity:.95;box-shadow:0 0 10px #fa334d66}.tele-scroll{padding:7% 5% 42%;scroll-behavior:auto}.story-kicker,.tele-scroll h2,.story-meta{transition:opacity .2s}.script{max-width:none;text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:clamp(32px,3.1vw,62px);line-height:1.48;font-weight:750;color:#fff;letter-spacing:0}.script p{margin:0 0 1.1em}.script p:nth-child(-n+2){color:#ffc629}.script strong{color:inherit}.tele-panel.reading .story-kicker,.tele-panel.reading .tele-scroll h2,.tele-panel.reading .story-meta,.tele-panel.reading .read-hint{display:none}.tele-panel.reading .tele-scroll{padding-top:32%;overflow:hidden}.script{will-change:transform;transform:translate3d(0,0,0)}.tele-panel.reading .script p:nth-child(-n+2){color:#ffc629}
 @media(max-width:900px){.script{font-size:clamp(27px,3.3vw,46px);line-height:1.42}.tele-panel.reading .tele-scroll{padding-top:35%}.tele-scroll{padding-left:4%;padding-right:4%}}
 @media(max-height:700px){.script{font-size:clamp(25px,2.7vw,42px);line-height:1.38}.tele-panel.reading .tele-scroll{padding-top:30%}.read-hint{display:none}}
-</style>
+/* Keep the timer and transport buttons inside the teleprompter on narrower IFP viewports. */
+@media(max-width:1400px){
+  .controlbar{grid-template-columns:minmax(0,1fr);min-width:0}
+  .controls-left{width:100%;min-width:0;flex-wrap:wrap;justify-content:center;row-gap:4px}
+  .controls-right{display:grid;width:100%;min-width:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+  .controls-right .timer,.controls-right .btn{min-width:0;width:100%;text-align:center}
+  .controls-right .btn{padding:8px 4px;white-space:normal;line-height:1.15}
+}
+@media(max-width:620px){
+  .controlbar{grid-template-columns:minmax(0,1fr);gap:3px}
+  .controls-left{column-gap:2px;row-gap:2px}
+  .controls-right{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+  .controls-right .timer{font-size:13px}
+  .controls-right .btn{font-size:clamp(8px,2.4vw,10px);padding:6px 2px}
+}</style>
 </head>
 <body>
 <div class="app">
@@ -57,3 +71,4 @@ function updateClock(){const d=new Date();$('clock').textContent=new Intl.DateTi
 window.addEventListener('beforeunload',()=>stream?.getTracks().forEach(t=>t.stop()));
 </script>
 </body></html>
+
