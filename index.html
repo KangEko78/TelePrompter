@@ -205,6 +205,8 @@
   #prompter .pembuka { color:#fbbf24; }
   #prompter .isi { color:#ffffff; }
   #prompter .penutup { color:#60a5fa; }
+  #prompter .pause-marker { display:inline-block; width:auto; height:auto; overflow:visible; opacity:1; vertical-align:baseline; color:#fbbf24; background:rgba(251,191,36,.14); border:1px solid rgba(251,191,36,.55); border-radius:6px; padding:0 .18em; margin:0 .12em; font-size:.72em; font-weight:900; line-height:1.2; }
+  #prompter .pause-marker::after { content:attr(data-pause-type); }
   #prompter .word.active {
     background:rgba(230,57,70,.4);
     border-radius:6px;
@@ -408,7 +410,7 @@
 <!-- EDITOR -->
 <div id="editor">
   <h2>✏ Edit Naskah Berita</h2>
-  <div class="hint">Pisahkan tiap paragraf dengan ENTER. Judul diawali "# ". Bagian: "## PEMBUKA", "## ISI", "## PENUTUP".</div>
+  <div class="hint">Pisahkan tiap paragraf dengan ENTER. Gunakan / untuk jeda pendek (1 detik) dan // untuk jeda panjang (2 detik). Tanda jeda akan terlihat berwarna kuning di teleprompter. Judul diawali "# ". Bagian: "## PEMBUKA", "## ISI", "## PENUTUP".</div>
   <textarea id="scriptInput" placeholder="Tulis naskah berita..."></textarea>
   <div class="actions">
     <button id="btnSaveScript">💾 SIMPAN</button>
@@ -552,6 +554,9 @@ let lastHighlighted = null;
 let lastWarningSec = -1;
 let totalScrollHeight = 0;
 let pxPerSecond = 0;
+let pauseUntil = 0;
+let pauseBoundaries = [];
+let lastPauseBoundary = -1;
 
 // State kamera
 let camStream = null;
@@ -792,7 +797,10 @@ const fmtTime = sec => {
 const countWords = () => {
   let total = 0;
   ['pembuka','isi','penutup'].forEach(sec => {
-    currentScript[sec].forEach(p => total += p.trim().split(/\s+/).length);
+    currentScript[sec].forEach(p => {
+      const clean = p.replace(/\/{1,2}/g, ' ').trim();
+      if (clean) total += clean.split(/\s+/).length;
+    });
   });
   return total;
 };
@@ -804,23 +812,62 @@ function renderScript() {
     currentScript[section].forEach(para => {
       const p = document.createElement('p');
       p.className = section;
-      p.style.marginBottom = '0.7em';
-      const words = para.split(/\s+/);
-      words.forEach((w, i) => {
-        const span = document.createElement('span');
-        span.className = 'word';
-        if (/\d/.test(w)) span.classList.add('num');
-        span.textContent = w;
-        p.appendChild(span);
-        if (i < words.length - 1) p.appendChild(document.createTextNode(' '));
+      p.style.marginBottom = '1.35em';
+
+      // Tanda / dan // menjadi jeda saat bergulir, bukan teks yang dibaca.
+      const sourceTokens = para.match(/\S+/g) || [];
+      // Jika tidak ada tanda jeda eksplisit, tambahkan jeda panjang di akhir paragraf agar cue terlihat pada naskah bawaan.
+      if (!sourceTokens.some(token => /\/{1,2}$/.test(token) || /^\/{1,2}$/.test(token))) sourceTokens.push('//');
+      sourceTokens.forEach((rawToken, tokenIndex) => {
+        let word = rawToken;
+        let marker = '';
+        if (/^\/{1,2}$/.test(rawToken)) {
+          marker = rawToken;
+          word = '';
+        } else {
+          const suffix = rawToken.match(/(\/{1,2})$/);
+          if (suffix) {
+            marker = suffix[1];
+            word = rawToken.slice(0, -marker.length);
+          }
+        }
+
+        if (word) {
+          const span = document.createElement('span');
+          span.className = 'word';
+          if (/\d/.test(word)) span.classList.add('num');
+          span.textContent = word;
+          p.appendChild(span);
+        }
+        if (marker) {
+          const pause = document.createElement('span');
+          pause.className = 'pause-marker';
+          pause.dataset.pauseMs = marker === '//' ? '2000' : '1000';
+          pause.dataset.pauseType = marker;
+          pause.setAttribute('aria-hidden', 'true');
+          p.appendChild(pause);
+        }
+        if (tokenIndex < sourceTokens.length - 1) p.appendChild(document.createTextNode(' '));
       });
       prompter.appendChild(p);
     });
   });
   position = 0;
+  pauseUntil = 0;
+  lastPauseBoundary = -1;
+  pauseBoundaries = [];
   applyTransform();
   wordCountEl.textContent = countWords();
   recalcSpeed();
+  // Hitung posisi setiap tanda jeda berdasarkan garis panduan baca.
+  requestAnimationFrame(() => {
+    const guideY = window.innerHeight * 0.42;
+    pauseBoundaries = Array.from(prompter.querySelectorAll('.pause-marker')).map((marker, index) => ({
+      index,
+      position: Math.max(0, marker.getBoundingClientRect().top + position - guideY),
+      duration: Number(marker.dataset.pauseMs) || 1000
+    })).sort((a, b) => a.position - b.position);
+  });
 }
 
 // ===== KECEPATAN =====
@@ -873,9 +920,26 @@ function animate(ts) {
   if (!lastTime) lastTime = ts;
   const delta = ts - lastTime;
   lastTime = ts;
-  elapsedMs += delta;
 
+  // Saat tanda jeda mencapai garis baca, hentikan scroll sesuai jenis tandanya.
+  if (pauseUntil && ts < pauseUntil) {
+    animId = requestAnimationFrame(animate);
+    return;
+  }
+  if (pauseUntil && ts >= pauseUntil) pauseUntil = 0;
+
+  const previousPosition = position;
   position += (pxPerSecond * delta) / 1000;
+  const crossedBoundary = pauseBoundaries.find(b =>
+    b.index !== lastPauseBoundary &&
+    previousPosition <= b.position && position >= b.position
+  );
+  if (crossedBoundary) {
+    position = crossedBoundary.position;
+    lastPauseBoundary = crossedBoundary.index;
+    pauseUntil = ts + crossedBoundary.duration;
+  }
+  elapsedMs += delta;
   applyTransform();
   highlightWord();
 
@@ -966,6 +1030,8 @@ function resetPrompter() {
   countdown.classList.remove('show');
   position = 0;
   elapsedMs = 0;
+  pauseUntil = 0;
+  lastPauseBoundary = -1;
   lastWarningSec = -1;
   applyTransform();
   if (lastHighlighted) { lastHighlighted.classList.remove('active'); lastHighlighted = null; }
